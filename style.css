@@ -1,0 +1,22 @@
+/* Write your CSS Here. */
+
+.movie-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: auto;
+}
+
+.movie-card {
+    flex: 0 1 250px;
+    border-style: ridge;
+    align-items: stretch;
+}
+
+.movie-card:hover {
+    opacity: 85%;
+    background-color: yellow;
+}
+
+.movie-card-image {
+    max-width: 100%;
+}
