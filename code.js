@@ -13,7 +13,7 @@ movieBox.setAttribute("class", "movie-box")
 document.body.append(movieBox)
 
 function renderSelectedMovie(array) {
-    for (let index = 0; index < 24; index += 1) {
+    for (let index = 0; index < 18; index += 1) {
         const currentMovie = document.createElement("div")
         currentMovie.setAttribute("class", "movie-card")
         currentMovie.innerHTML =
