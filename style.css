@@ -1,5 +1,9 @@
 /* Write your CSS Here. */
 
+body {
+    background-color: #8bbff5;
+}
+
 .movie-box {
     display: flex;
     flex-wrap: wrap;
@@ -10,6 +14,7 @@
     flex: 0 1 250px;
     border-style: ridge;
     align-items: stretch;
+    background-color: beige;
 }
 
 .movie-card:hover {
