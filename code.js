@@ -12,8 +12,8 @@ const movieBox = document.createElement("div")
 movieBox.setAttribute("class", "movie-box")
 document.body.append(movieBox)
 
-function renderSelectedMovie(array) {
-    for (let index = 0; index < array.length; index += 3) {
+function renderSelectedMovie(array, increment) {
+    for (let index = 0; index < array.length; index += increment) {
         const currentMovie = document.createElement("div")
         currentMovie.setAttribute("class", "movie-card")
         currentMovie.innerHTML =
@@ -26,7 +26,7 @@ function renderSelectedMovie(array) {
         movieBox.append(currentMovie)
     }
 }
-renderSelectedMovie(combinedDataSet)
+renderSelectedMovie(combinedDataSet, 10)
 
 // Part 3: Searching through movies by title and/or actor/actress
 function searchFunction(array, searchTerm) {
@@ -47,15 +47,17 @@ function submitSearch(event) {
 
     let searchTitle = movieSearchInput.value
     let searchActor = actorSearchInput.value
-
+    if (searchTitle === "" && searchActor === "") renderSelectedMovie(combinedDataSet, 10)
+    else {
     const searchArray = combinedDataSet.filter(movie => movie.title.toLowerCase().includes(searchTitle.toLowerCase()))
         .filter(movie => (searchFunction(movie.cast, searchActor)))
 
-    renderSelectedMovie(searchArray)
+    renderSelectedMovie(searchArray, 1)
+    }
 }
 
 const searchButton = document.querySelector(".search-form")
 searchButton.addEventListener("submit", submitSearch)
 
-console.log("Movies:", movies);
-console.log("MovieDetails:", movieDetails);
+// console.log("Movies:", movies);
+// console.log("MovieDetails:", movieDetails);
